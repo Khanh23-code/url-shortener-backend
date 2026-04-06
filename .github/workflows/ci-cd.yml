@@ -2,14 +2,15 @@ name: URL Shortener CI-CD
 
 on:
   push:
-    [cite_start]branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build-and-test:
-    [cite_start]runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        [cite_start]uses: actions/checkout@v3 
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -20,4 +21,4 @@ jobs:
         run: npm install
 
       - name: Build app
-        [cite_start]run: echo "Building the application..."
+        run: echo "Building the application..."
